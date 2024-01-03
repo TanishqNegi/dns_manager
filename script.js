@@ -4,7 +4,7 @@ document.getElementById("createButton").addEventListener("click", function() {
   const type = document.getElementById("type").value;
 
   // Make a POST request to create a new record
-  fetch("http://localhost:3000/create-dns-record/", {
+  fetch("http://3.111.37.128:3000/create-dns-record/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,7 +30,7 @@ document.getElementById("table_body").addEventListener("click", function(e) {
     const hostedZoneId = "Z00525512VLUPBPYG2DY4";
 
     // Make a DELETE request to delete the record
-    fetch(`http://localhost:3000/delete-dns-record/?hostedZoneId=${hostedZoneId}`, {
+    fetch(`http://3.111.37.128:3000/delete-dns-record/?hostedZoneId=${hostedZoneId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ document.getElementById("table_body").addEventListener("click", function(e) {
 
 
 document.getElementById("refreshButton").addEventListener("click", function() {
-  fetch("http://localhost:3000/get-dns-records?hostedZoneId=Z00525512VLUPBPYG2DY4")
+  fetch("http://3.111.37.128:3000/get-dns-records?hostedZoneId=Z00525512VLUPBPYG2DY4")
     .then((data) => data.json())
     .then((responseData) => {
       const objectData = responseData.records;
@@ -80,7 +80,7 @@ document.getElementById("refreshButton").addEventListener("click", function() {
 
 
 
-fetch("http://localhost:3000/get-dns-records")
+fetch("http://3.111.37.128:3000/get-dns-records")
   .then((data) => {
     return data.json();
   })
